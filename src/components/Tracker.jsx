@@ -42,19 +42,28 @@ export class Tracker extends Component {
                 break;
             default:
                 return <img className='coin-logo' src={require('../pictures/Default.png')} />
+                break;
         };
     };
 
     render() {
         return (
             <div className='tracker'>
-                <div className='coin-name'>
-                    {this.props.coin}
+            {this.state.price > 0 ?
+                <div>
+                    <div className='coin-name'>
+                        {this.props.coin}
+                    </div>
+
+                    {this.getLogo(this.props.coin)}
+                        
+                    <div className='coin-price'>
+                        ${this.state.price}
+                    </div>
                 </div>
-                {this.getLogo(this.props.coin)}
-                <div className='coin-price'>
-                    ${this.state.price}
-                </div>
+                :
+                <div>Not found</div>
+            }
             </div>
         );
     }
@@ -63,12 +72,12 @@ export class Tracker extends Component {
 
 /*
 case '   ':
-                return <img className='coin-logo' src={require('../pictures/   .jpg')} />
-                break;
-            case '   ':
-                return <img className='coin-logo' src={require('../pictures/   .jpg')} />
-                break;
-            case '   ':
-                return <img className='coin-logo' src={require('../pictures/   .jpg')} />
-                break;
-                */
+    return <img className='coin-logo' src={require('../pictures/   .jpg')} />
+    break;
+case '   ':
+    return <img className='coin-logo' src={require('../pictures/   .jpg')} />
+    break;
+case '   ':
+    return <img className='coin-logo' src={require('../pictures/   .jpg')} />
+    break;
+*/
