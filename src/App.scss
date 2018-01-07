@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+#App {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    font-family: 'Poiret One', cursive;
+}
+
+#input {
+    h1 {
+        font-size: 3em;
+    }
+
+    input {
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid black;
+        outline: none;
+        margin: 3% 0 5% 0;
+        font-size: 200%;
+        min-width: 15%;
+        transition: 0.5s min-width;
+
+        &:focus {
+            min-width: 90%;
+        }
+    }
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+#active-trackers {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+
+    .tracker {
+        border: 2px solid black;
+        min-width: 300px;
+        height: 300px;
+        margin: 5%;
+        position: relative;
+        @include border-radius(15px);
+
+        .coin-name {
+            font-size: 5em;
+            font-weight: bolder;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .coin-logo {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .coin-price {
+            font-size: 3em;
+            font-weight: bold;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
