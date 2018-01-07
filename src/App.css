@@ -57,5 +57,12 @@
       bottom: 10%;
       left: 50%;
       transform: translateX(-50%); }
+    #active-trackers .tracker .coin-error {
+      font-size: 5em;
+      font-weight: bolder;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
 
 /*# sourceMappingURL=App.css.map */

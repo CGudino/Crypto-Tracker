@@ -49,6 +49,7 @@ export class Tracker extends Component {
     render() {
         return (
             <div className='tracker'>
+            {/* Gotta fix it so it doesn't show as "Not found" at first */}
             {this.state.price > 0 ?
                 <div>
                     <div className='coin-name'>
@@ -62,7 +63,9 @@ export class Tracker extends Component {
                     </div>
                 </div>
                 :
-                <div>Not found</div>
+                <div className='coin-error'>
+                    Not found
+                </div>
             }
             </div>
         );
