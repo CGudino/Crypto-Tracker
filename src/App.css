@@ -26,16 +26,24 @@
   flex-flow: row wrap;
   justify-content: space-around; }
   #active-trackers .tracker {
-    border: 2px solid black;
+    border: 5px solid black;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
     min-width: 300px;
     height: 300px;
     margin: 5%;
     position: relative;
-    border-radius: 15px;
-    -webkit-border-radius: 15px;
-    -moz-border-radius: 15px;
-    -ms-border-radius: 15px;
-    -o-border-radius: 15px; }
+    border-radius: 15%;
+    -webkit-border-radius: 15%;
+    -moz-border-radius: 15%;
+    -ms-border-radius: 15%;
+    -o-border-radius: 15%; }
+    #active-trackers .tracker .delete {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+      #active-trackers .tracker .delete img {
+        height: 30px;
+        width: 30px; }
     #active-trackers .tracker .coin-name {
       font-size: 5em;
       font-weight: bolder;
@@ -57,12 +65,20 @@
       bottom: 10%;
       left: 50%;
       transform: translateX(-50%); }
-    #active-trackers .tracker .coin-error {
-      font-size: 5em;
-      font-weight: bolder;
+    #active-trackers .tracker .loading {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%); }
+      #active-trackers .tracker .loading img {
+        width: 150px;
+        height: 150px;
+        animation: spin 1s infinite; }
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=App.css.map */
