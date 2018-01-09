@@ -1,10 +1,11 @@
 {
-  "main.css": "static/css/main.1b373468.css",
-  "main.css.map": "static/css/main.1b373468.css.map",
-  "main.js": "static/js/main.a9fb8226.js",
-  "main.js.map": "static/js/main.a9fb8226.js.map",
+  "main.css": "static/css/main.2a5cae28.css",
+  "main.css.map": "static/css/main.2a5cae28.css.map",
+  "main.js": "static/js/main.8bfeb595.js",
+  "main.js.map": "static/js/main.8bfeb595.js.map",
   "static\\media\\Bitcoin.jpg": "static/media/Bitcoin.e00979bc.jpg",
   "static\\media\\Default.png": "static/media/Default.4e70bfa1.png",
   "static\\media\\Dogecoin.png": "static/media/Dogecoin.71e3927b.png",
-  "static\\media\\Litecoin.png": "static/media/Litecoin.4762a9b2.png"
+  "static\\media\\Litecoin.png": "static/media/Litecoin.4762a9b2.png",
+  "static\\media\\Loading.png": "static/media/Loading.ecd15730.png"
 }
