@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poiret+One');
 
+body {
+    background-color: lightgray;
+}
+
 #App {
     width: 100%;
     margin: auto;
@@ -16,11 +20,12 @@
         text-align: center;
         border: none;
         border-bottom: 2px solid black;
+        background: transparent;
         outline: none;
         margin: 3% 0 5% 0;
         font-size: 200%;
-        min-width: 15%;
-        transition: 0.5s min-width;
+        min-width: 10%;
+        transition: 0.5s;
 
         &:focus {
             min-width: 90%;
@@ -45,11 +50,12 @@
 
     .tracker {
         border: 5px solid black;
-        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
-        min-width: 300px;
+        background-color: white;
+        width: 300px;
         height: 300px;
         margin: 5%;
         position: relative;
+        cursor: grab;
         @include border-radius(15%);
 
         .delete {
@@ -60,11 +66,12 @@
             img {
                 height: 30px;
                 width: 30px;
+                cursor: default;
             }
         }
 
         .coin-name {
-            font-size: 5em;
+            font-size: 500%;
             font-weight: bolder;
             position: absolute;
             top: 5%;
@@ -73,8 +80,8 @@
         }
 
         .coin-logo {
-            height: 100px;
-            width: 100px;
+            height: 35%;
+            width: 35%;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -97,8 +104,8 @@
             transform: translate(-50%, -50%);
 
             img {
-                width: 150px;
-                height: 150px;
+                width: 35%;
+                height: 35%;
                 animation: spin 1s infinite;
             }
         }
@@ -111,5 +118,15 @@
       }
       to {
         transform: rotate(360deg);
+      }
+  }
+
+  footer {
+      font-size: 200%;
+      margin: 5% 0 2% 0;
+      
+      a {
+          text-decoration: none;
+          color: inherit;
       }
   }

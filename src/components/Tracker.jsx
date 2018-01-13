@@ -14,14 +14,24 @@ export class Tracker extends Component {
         // Switch statement for reducing coin names to the initials
         let coinInput;
         switch(this.props.coin) {
-            case 'Bitcoin':
+            case 'BITCOIN':
                 coinInput = 'BTC';
                 break;
-            case 'Ethereum':
+            case 'ETHEREUM':
                 coinInput = 'ETH';
                 break;
-            case 'Litecoin':
+            case 'LITECOIN':
                 coinInput = 'LTC';
+                break;
+            case 'IOTA':
+            case 'MIOTA':
+                coinInput = 'IOTA';
+                break;
+            case 'RIPPLE':
+                coinInput = 'XRP';
+                break;
+            case 'STELLAR':
+                coinInput = 'XLM';
                 break;
             default:
                 coinInput = this.props.coin;
@@ -59,16 +69,20 @@ export class Tracker extends Component {
             case 'DOGE':
                 return <img className='coin-logo' src={require('../pictures/Dogecoin.png')} alt='Doge logo' />
                 break;
+            case 'IOTA':
+                return <img className='coin-logo' src={require('../pictures/Iota.png')} alt='Iota logo' />
+                break;
+            case 'XRP':
+                return <img className='coin-logo' src={require('../pictures/Ripple.jpeg')} alt='Ripple logo' />
+                break;
+            case 'XLM':
+                return <img className='coin-logo' src={require('../pictures/Stellar.png')} alt='Stellar logo' />
+                break;
             default:
                 return <img className='coin-logo' src={require('../pictures/Default.png')} alt='Cryptocurrency logo' />
                 break;
         };
     };
-
-    delete(e) {
-        let card = e.target.parentNode.parentNode.parentNode;
-        card.parentNode.removeChild(card);
-    }
 
     render() {
         return (
@@ -76,10 +90,11 @@ export class Tracker extends Component {
             {/* Gotta fix it so it doesn't show as "Not found" at first */}
             {this.state.price > 0 ?
                 <div>
-                    <div
-                        className='delete'
-                        onClick={this.delete}>
-                        <img src={require('../pictures/Delete.png')} alt='Delete' />
+                    <div className='delete'>
+                        <img
+                            src={require('../pictures/Delete.png')}
+                            alt='Delete'
+                            onClick={this.props.onClick} />
                     </div>
 
                     <div className='coin-name'>
