@@ -36,10 +36,11 @@ class App extends Component {
 
   delete(e) {
     // Selects selected tracker as variable card
-    let card = e.target.parentNode.parentNode.parentNode;
+    let card = e.target.parentNode.parentNode.parentNode.parentNode;
+
     // Adds animation of tracker fading away
     let opacity = 1;
-    let height = 300;
+    let height = 200;
 
     console.log(e.target);
 
@@ -48,7 +49,7 @@ class App extends Component {
 
       // This needs to be set separately because you can't subtract percentages
       height -= 10;
-      card.style.height = `${height}px`;
+      card.firstElementChild.style.height = `${height}px`;
 
       if (opacity === 0) {
         clearInterval();
@@ -77,10 +78,9 @@ class App extends Component {
 
         <div id='active-trackers'>
           {/* Default coins */}
-          {this.state.defaultTrackers.length > 0 &&
-            this.state.defaultTrackers.map((coin, i) => {
-              return <div key={i}><Tracker coin={coin} onClick={this.delete} /></div>;
-            })}
+          {this.state.defaultTrackers.map((coin, i) => {
+            return <div key={i}><Tracker coin={coin} onClick={this.delete} /></div>;
+          })}
 
           {/* Render additional coins users input */}
           {this.state.trackers.map((coin, i) => {
