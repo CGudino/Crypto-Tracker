@@ -19,15 +19,22 @@ class App extends Component {
   }
 
   handleKeyPress(e) {
+    let inputValue = document.getElementById('input-text');
+
     if (e.key === 'Enter') {
-      this.setState({
-        trackers: this.state.trackers.concat(<Tracker coin={e.target.value.toUpperCase().trim()} onClick={this.delete} />)
-      });
-      document.getElementById('input-text').value = '';
+      if (inputValue.value.length > 0) {
+        this.setState({
+          trackers: this.state.trackers.concat(<Tracker coin={e.target.value.toUpperCase().trim()} onClick={this.delete} />)
+        });
+        inputValue.value = '';
+      } else {
+        alert('There\'s nothing in the input field');
+      }
     }
   }
 
   componentDidMount() {
+    // Allows the elements to be draggable
     let drag = document.getElementById('active-trackers');
     Sortable.create(drag, {
       animation: 500
@@ -41,8 +48,6 @@ class App extends Component {
     // Adds animation of tracker fading away
     let opacity = 1;
     let height = 200;
-
-    console.log(e.target);
 
     setInterval(() => {
       card.style.opacity = opacity -= 0.01;
@@ -63,14 +68,6 @@ class App extends Component {
   }
 
   render() {
-    for (let i = 0; i < this.state.trackers.length; i++) {
-      /*  FILL THIS IN
-          Make it so it goes through this.state.trackers
-          and console logs each one to see if you can get their properties logged
-          Then you can do an if statement to delete the ones that aren't cryptos
-      */
-    }
-
     return (
       <div id="App">
         <Input
@@ -89,7 +86,7 @@ class App extends Component {
         </div>
 
         {/* Footer */}
-        <footer>Created by <a href='CristianGudino.com' target='_blank'>Cristian Gudiño</a></footer>
+        <footer>Created by <a href='http://cristiangudino.com/' target='_blank'>Cristian Gudiño</a></footer>
       </div>
     );
   }

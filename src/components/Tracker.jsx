@@ -44,14 +44,14 @@ export class Tracker extends Component {
             const url = `https://min-api.cryptocompare.com/data/price?fsym=${coinInput}&tsyms=USD`;
             
             fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                this.setState({
-                    price: data.USD,
-                    activeCoin: coinInput
+                .then(response => response.json())
+                .then(data => {
+                    this.setState({
+                        price: data.USD,
+                        activeCoin: coinInput
+                    });
                 });
-            });
-        }, 1000);
+        }, 5000);
     }
 
     // Get logo of coin
@@ -109,7 +109,9 @@ export class Tracker extends Component {
                 </div>
                 :
                 <div className='loading'>
-                    <img src={require('../pictures/Loading.png')} alt='Loading...' />
+                    <img
+                        src={require('../pictures/Loading.png')}
+                        alt='Loading...' />
                 </div>
             }
             </div>
