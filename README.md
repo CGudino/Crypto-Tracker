@@ -6,4 +6,6 @@ This was created with create-react-app and doesn't use any external libraries ex
 
 The app comes with 7 currencies on the page by default, but you can delete and add as many as you want.
 
+You can run a local instance of the app by cloning this repo, running npm install, then npm start. Or just click the link below. :)
+
 http://cristiangudino.com/Crypto-Tracker/
